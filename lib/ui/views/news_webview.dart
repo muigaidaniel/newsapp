@@ -15,14 +15,11 @@ class NewsWebView extends StatelessWidget {
         builder: (context, model, child) => SafeArea(
               child: WebView(
                 initialUrl: '${data.url}',
-                javascriptMode: JavascriptMode.unrestricted,
+                javascriptMode: JavascriptMode.disabled,
                 onWebViewCreated: (controller) {
                   model.controller = controller;
-                  model.disableHeader();
                 },
-                onPageStarted: (url) {
-                  model.disableHeader();
-                },
+                onPageStarted: (url) {},
               ),
             ));
   }

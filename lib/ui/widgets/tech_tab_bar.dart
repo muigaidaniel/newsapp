@@ -48,6 +48,8 @@ class TechTab extends StatelessWidget {
                           });
                     },
                   );
+                } else if (snapshot.connectionState == ConnectionState.none) {
+                  return const Text('No internet connection');
                 } else if (snapshot.hasError) {
                   return Text(snapshot.error.toString());
                 }
